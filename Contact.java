@@ -1,4 +1,3 @@
-package App;
 public class Contact {
     // Variables declaration
     static int contact_nbr = 0;
