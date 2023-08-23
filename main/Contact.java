@@ -2,15 +2,13 @@ public class Contact {
     // Variables declaration
     static int contact_nbr = 0;
 
-    private String fname, lname, fullName, email, tel;
+    private String name, email, tel;
     private int age, order;
     private char gender;
 
     // Class Constructor 
-    public Contact(String fname, String lname, String email, String tel, int age, char gender){
-        setFname(fname);
-        setLname(lname);
-        setFullNme(this.getFname(), this.getLname());
+    public Contact(String name, String email, String tel, int age, char gender){
+        setName(name);
         setTel(tel);
         setEmail(email);
         setAge(age);
@@ -21,16 +19,8 @@ public class Contact {
     }
 
     // Class Setters
-    public void setFname(String fname){
-        this.fname = fname;
-    }
-
-    public void setLname(String lname){
-        this.lname = lname;
-    }
-
-    public void setFullNme(String fname, String lname){
-        this.fullName = lname + ", " + fname;
+    public void setName(String name){
+        this.name = name;
     }
 
     public void setTel(String  tel){
@@ -64,16 +54,8 @@ public class Contact {
     }
 
     // Class Getters
-    public String getFname(){
-        return this.fname;
-    }
-
-    public String getLname(){
-        return this.lname;
-    }
-
-    public String getFullName(){
-        return this.fullName;
+    public String getName(){
+        return this.name;
     }
 
     public String getTel(){
@@ -98,12 +80,35 @@ public class Contact {
 
     public String toString(){
         return 
-        "\t*** " + this.getFullName() + " ***\n\n" +
-        "First name: " + this.getFname() + "\n" +
-        "Last name: " + this.getLname() + "\n" +
+        "\t*** " + this.getName() + " ***\n\n" +
         "Tel: " + this.getTel() + "\n" +
         "Email: " + this.getEmail() + "\n" +
         "Age: " + this.getAge() + "\n" +
         "Gender: " + this.getGender() + "\n";
+    }
+
+    public void Modify(){
+
+    }
+
+    public void delete(){
+        
+    }
+
+    public void addToGroup(){
+
+    }
+
+    public void share(){
+
+    }
+    
+    public void call(){
+        System.out.println("Calling " + this.getName() + " .......\n");
+    }
+
+    public void sendSMS(String message){
+        System.out.println("'Message" + message + "'\n\n");
+        System.out.println("Message was sent to " + this.getName() + " Successfully.\n");
     }
 }
