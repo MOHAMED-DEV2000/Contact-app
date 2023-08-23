@@ -20,22 +20,38 @@ public class Contact {
 
     // Class Setters
     public void setName(String name){
-        this.name = name;
+
+        // Make sure it's a real name (valid)
+        if(name.matches("[a-zA-Z]+"))
+            this.name = name;
+        else
+            System.out.println("Invalid name\n");
     }
 
     public void setTel(String  tel){
-        // Tel Must be 10 digits/characters begin with country code
-        this.tel = tel;
+        
+        // Make sure it's a moroccan tel
+        if (tel.length() == 10 && tel.startsWith("06"))
+            this.tel = tel;
+        else
+            System.out.println("Invalid Tel\n");
+
     }
 
     public void setEmail(String email){
-        // Email entered Must be in xxx@yyyy.com format
-        this.email = email;
+
+        // Make sure it's a valid email address
+        if (email.endsWith("@gmail.com"))
+            this.email = email;
+        else
+            System.out.println("Invalid email\n");
+        
     }
 
     public void setAge(int age){
-        // Make sure it's a reasonable age
-        if (age > 10){
+        
+        // Make sure the age is for teenagers-adults only
+        if (age >= 18){
             this.age = age;
         }else{
             System.out.println("Invalid age\n");
@@ -43,14 +59,22 @@ public class Contact {
     }
 
     public void setGender(char gender){
-        // Make sure the gender is either a Femal or Male
-        this.gender = gender;
+        
+        // Make sure the gender is either a Female or Male
+        if (gender == 'F' || gender == 'M')
+            this.gender = gender;
+        else
+            System.out.println("Invalid gender\n");
 
     }
 
     public void setOrder(int contact_nbr){
+
         // Make sure it's always positive number
-        this.order = contact_nbr;
+        if (contact_nbr >= 0)
+            this.order = contact_nbr;
+        else
+            System.out.println("Invalid Order number\n");
     }
 
     // Class Getters
@@ -87,7 +111,7 @@ public class Contact {
         "Gender: " + this.getGender() + "\n";
     }
 
-    public void Modify(){
+    public void modify(){
 
     }
 
